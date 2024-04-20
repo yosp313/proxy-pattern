@@ -1,1 +1,1 @@
-###Proxy Pattern using java servlets
+Proxy Pattern using java servlets
