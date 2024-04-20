@@ -29,7 +29,6 @@ public class BlogsServlet extends HttpServlet {
 
         try {
             blogs = dao.getBlogs();
-            System.out.println(blogs);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
