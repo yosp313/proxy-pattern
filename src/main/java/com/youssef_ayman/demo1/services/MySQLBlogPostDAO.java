@@ -40,4 +40,26 @@ public class MySQLBlogPostDAO implements BlogPostDAO {
 
         return blogs;
     }
+
+    public void postBlog(String title, String content) throws SQLException {
+        BlogPost blog = new BlogPost(3,title, content);
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        var sql = "INSERT INTO blogs (id, title, content) VALUES (?, ?, ?)";
+        Connection connection = DriverManager.getConnection(DATABASE_URL, USERNAME, PASSWORD);
+        PreparedStatement statement = connection.prepareStatement(sql);
+
+        statement.setString(1, String.valueOf(blog.getId()));
+        statement.setString(2, blog.getTitle());
+        statement.setString(3, blog.getContent());
+
+        statement.executeUpdate();
+
+        statement.close();
+        connection.close();
+    }
 }

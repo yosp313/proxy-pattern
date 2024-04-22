@@ -2,7 +2,7 @@ package com.youssef_ayman.demo1.servlets;
 
 import com.youssef_ayman.demo1.interfaces.BlogPostDAO;
 import com.youssef_ayman.demo1.models.BlogPost;
-import com.youssef_ayman.demo1.services.CashedBlogPost;
+import com.youssef_ayman.demo1.services.CachedBlogPost;
 import com.youssef_ayman.demo1.services.MySQLBlogPostDAO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -16,10 +16,12 @@ import java.util.List;
 
 @WebServlet("/blogs")
 public class BlogsServlet extends HttpServlet {
-    private static BlogPostDAO dao;
+    private static BlogPostDAO cacheDao;
+    private static MySQLBlogPostDAO dao;
 
     public BlogsServlet(){
-        this.dao = new CashedBlogPost(new MySQLBlogPostDAO());
+        this.cacheDao = new CachedBlogPost(new MySQLBlogPostDAO());
+        this.dao = new MySQLBlogPostDAO();
     }
 
     @Override
@@ -28,7 +30,7 @@ public class BlogsServlet extends HttpServlet {
         List<BlogPost> blogs;
 
         try {
-            blogs = dao.getBlogs();
+            blogs = cacheDao.getBlogs();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -41,5 +43,19 @@ public class BlogsServlet extends HttpServlet {
 
 
         req.getRequestDispatcher("/blogs.jsp").forward(req, res);
+    }
+
+    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        String title = req.getParameter("title");
+        String content = req.getParameter("content");
+
+        try{
+            dao.postBlog(title, content);
+        }
+        catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+
+        res.sendRedirect("/blogs");
     }
 }

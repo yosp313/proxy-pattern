@@ -9,11 +9,11 @@ import java.util.stream.Collectors;
 import com.youssef_ayman.demo1.interfaces.BlogPostDAO;
 import com.youssef_ayman.demo1.models.BlogPost;
 
-public class CashedBlogPost implements BlogPostDAO {
+public class CachedBlogPost implements BlogPostDAO {
     BlogPostDAO blogService;
     Map<Integer, BlogPost> blogCache;
 
-    public CashedBlogPost(BlogPostDAO blogService) {
+    public CachedBlogPost(BlogPostDAO blogService) {
         this.blogService = blogService;
         this.blogCache = new HashMap<>();
     }
