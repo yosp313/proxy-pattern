@@ -10,13 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f51b0687-7fb1-41f3-8338-74450fbd5f47" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/youssef_ayman/demo1/services/CachedBlogPost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youssef_ayman/demo1/services/CashedBlogPost.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youssef_ayman/demo1/services/MySQLBlogPostDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youssef_ayman/demo1/services/MySQLBlogPostDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youssef_ayman/demo1/servlets/BlogsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youssef_ayman/demo1/servlets/BlogsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +198,7 @@
       <workItem from="1713632496360" duration="4698000" />
       <workItem from="1713711909982" duration="1178000" />
       <workItem from="1713779528362" duration="2505000" />
-      <workItem from="1713801647160" duration="337000" />
+      <workItem from="1713801647160" duration="703000" />
     </task>
     <servers />
   </component>
