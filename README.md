@@ -5,4 +5,4 @@
 
 ## Routes:
 * /index : Has a form that sends a POST request to the server with the title and content
-* /blogs : Sends a GET request to the server to list all of the blogs
+* /blogs : Sends a GET request to the server to list all the blogs
